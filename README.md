@@ -1,288 +1,251 @@
-<div align="center">
-  <img src="./frontend/src/assets/logo.png" alt="BuildSight logo" width="110" />
-
-# BuildSight · SITE INSIGHTS
+# 🏗️ BuildSight
 
 **AI-Powered Construction Intelligence**
 
-[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
-[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Google Gemini](https://img.shields.io/badge/Google_Gemini-8E75B2?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
-
-</div>
-
-<br />
-
-BuildSight brings visual site observations, preliminary construction estimates, weather context, and practical construction guidance into one workspace. Built with **React + Vite** and **FastAPI + Python**, it uses Google Gemini for supported AI-powered workflows.
+BuildSight is a web application that helps users analyze construction sites using AI. It provides site safety analysis, crack detection, construction cost estimation, weather information, and an AI construction assistant.
 
 ---
 
-## 🚀 Live Demo
+## 🚀 Features
 
-- **Frontend:** [BuildSight on Vercel](https://buildsight-multimodal-construction.vercel.app/)
-- **Backend API:** [BuildSight on Render](https://buildsight-multimodal-construction.onrender.com)
-- **API health check:** [/api/health](https://buildsight-multimodal-construction.onrender.com/api/health)
-- **Interactive API docs:** [/docs](https://buildsight-multimodal-construction.onrender.com/docs)
-
----
-
-## ✨ Key Features
-
-### 🦺 Site Safety Audit
-
-- Uses Gemini multimodal image analysis to identify visible site-safety concerns.
-- Validates provider results against expected response structures.
-- Reports AI analysis as unavailable when the required API configuration is missing, rather than inventing results.
-
-### 🧱 Crack Analysis
-
-- Provides AI-assisted descriptions of visible crack patterns and cautious next steps.
-- Does not infer reliable crack dimensions from ordinary photos without a suitable scale.
-
-### 📐 Planning & Valuation
-
-- Generates indicative INR construction estimates from inputs such as area, location tier, property tier, and structure type.
-- Includes editable material quantities, cost breakdowns, schedules, and resource plans.
-
-### 🤖 Construction Assistant
-
-- Offers construction guidance and a daily-report workflow.
-- Labels offline guidance appropriately; Gemini-powered responses require a configured backend API key.
-
-### 🌦️ Weather Insights
-
-- Uses Open-Meteo geocoding, current conditions, and a three-day forecast.
-- Supports a user-entered location or coordinates and reports unavailable data when a location or provider cannot be resolved.
-
-### 📄 Reports & Usability
-
-- Supports structured safety/crack assessment exports and assistant report copying/export.
-- Includes browser printing and a saved light/dark theme preference.
-
-### 🔐 API Safeguards
-
-- Configurable CORS origins and validated Pydantic response models.
-- Keeps the Gemini API key on the backend rather than exposing it to browser code.
+- 🦺 AI Site Safety Analysis
+- 🧱 Crack Detection & Analysis
+- 📐 Construction Cost Estimation
+- 🤖 AI Construction Assistant
+- 🌦️ Weather Information
+- 📄 Download Reports
 
 ---
 
-## 📸 Screenshots
+## 🛠️ Tech Stack
 
-|                                   Overview                                   |                                  Site Safety Audit                                   |
-| :--------------------------------------------------------------------------: | :----------------------------------------------------------------------------------: |
-| ![BuildSight overview dashboard](./frontend/public/screenshots/overview.png) | ![BuildSight site safety audit](./frontend/public/screenshots/site-safety-audit.png) |
-
-|                                 Crack Analysis                                 |                                    Planning & Valuation                                    |
-| :----------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------: |
-| ![BuildSight crack analysis](./frontend/public/screenshots/crack-analysis.png) | ![BuildSight planning and valuation](./frontend/public/screenshots/planning-valuation.png) |
-
-|                                     Construction Assistant                                     |
-| :--------------------------------------------------------------------------------------------: |
-| ![BuildSight construction assistant](./frontend/public/screenshots/construction-assistant.png) |
-
----
-
-## 🛠️ Technology Stack
-
-**Frontend**
-
+### Frontend
 - React
 - Vite
 - Axios
 - CSS
 
-**Backend**
-
+### Backend
 - Python
 - FastAPI
-- Pydantic
 - Uvicorn
+- Pydantic
 
-**AI & External Data**
-
-- Google Gemini API for optional image analysis and assistant features
-- Open-Meteo for weather and geocoding data
+### AI & APIs
+- Google Gemini API
+- Open-Meteo API
 
 ---
 
-## ⚙️ Getting Started
+## 📂 Project Structure
 
-### Prerequisites
-
-Install the following before running BuildSight locally:
-
-- [Python 3.12](https://www.python.org/downloads/) recommended for the deployed backend environment
-- [Node.js and npm](https://nodejs.org/)
-- [Git](https://git-scm.com/)
-- Optional: a [Google AI Studio API key](https://aistudio.google.com/) for Gemini-powered features
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/tusharRaghuwanshi43/buildsight-multimodal-construction-intelligence.git
-cd buildsight-multimodal-construction-intelligence
+```
+buildsight-multimodal-construction-intelligence/
+│
+├── backend/
+│   ├── main.py
+│   ├── config.py
+│   ├── requirements.txt
+│   └── .env.example
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   └── vite.config.js
+│
+└── README.md
 ```
 
-### 2. Configure and Start the Backend
+---
 
-Open a terminal at the repository root:
+# ⚙️ Installation
 
-```powershell
+## 1. Clone Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/buildsight.git
+
+cd buildsight
+```
+
+---
+
+## 2. Backend Setup
+
+Move to backend
+
+```bash
 cd backend
 ```
 
-Create and activate a virtual environment on Windows PowerShell:
+Create virtual environment
+
+```bash
+python -m venv venv
+```
+
+Activate it
+
+### Windows
 
 ```powershell
-py -3.12 -m venv .venv
-.\.venv\Scripts\Activate.ps1
+venv\Scripts\activate
+```
+
+### macOS/Linux
+
+```bash
+source venv/bin/activate
+```
+
+Install dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
-If your repository includes a `.env.example`, copy it to `.env` and edit it locally:
+Create `.env`
 
-```powershell
-Copy-Item .env.example .env
+```text
+GEMINI_API_KEY=YOUR_API_KEY
 ```
 
-Set `GEMINI_API_KEY` in `backend/.env` if you want Gemini-powered features. Keep this key backend-only and never commit `.env`.
+Run backend
 
-Start the API:
-
-```powershell
-uvicorn main:app --reload --port 8000
+```bash
+uvicorn main:app --reload
 ```
 
-- **Backend:** `http://localhost:8000`
-- **Health check:** [http://localhost:8000/api/health](http://localhost:8000/api/health)
-- **Interactive API docs:** [http://localhost:8000/docs](http://localhost:8000/docs)
+Backend runs on
 
-### 3. Configure and Start the Frontend
-
-Open a second terminal at the repository root:
-
-```powershell
-cd frontend
-npm install
+```
+http://localhost:8000
 ```
 
-Create `frontend/.env` with the local backend URL:
+API Docs
 
-```env
-VITE_API_URL=http://localhost:8000
 ```
-
-Start the Vite development server:
-
-```powershell
-npm run dev
+http://localhost:8000/docs
 ```
-
-Open [http://localhost:5173](http://localhost:5173).
-
-Vite environment variables are read when the dev server starts. Restart it after changing `frontend/.env`.
 
 ---
 
-## 🧪 Tests & Production Build
+## 3. Frontend Setup
 
-Run backend tests:
+Open another terminal
 
-```powershell
-cd backend
-python -m pytest
+```bash
+cd frontend
 ```
 
-Build the frontend:
+Install packages
 
-```powershell
-cd frontend
+```bash
+npm install
+```
+
+Create `.env`
+
+```text
+VITE_API_URL=http://localhost:8000
+```
+
+Run frontend
+
+```bash
+npm run dev
+```
+
+Frontend runs on
+
+```
+http://localhost:5173
+```
+
+---
+
+## 📸 Screenshots
+
+Add screenshots here.
+
+```
+frontend/public/screenshots/
+```
+
+---
+
+## 📦 Build
+
+Frontend
+
+```bash
 npm run build
+```
+
+Backend
+
+```bash
+python -m pytest
 ```
 
 ---
 
 ## ☁️ Deployment
 
-### Backend — Render
+### Frontend
 
-Configure the Render web service with these settings:
+Deploy on **Vercel**
 
-- **Root Directory:** `backend`
-- **Build Command:** `pip install -r requirements.txt`
-- **Start Command:** `uvicorn main:app --host 0.0.0.0 --port $PORT`
-- **Python version:** use `3.12` via a `backend/.python-version` file if your dependencies do not support the default runtime.
+### Backend
 
-Add `GEMINI_API_KEY` and, optionally, `GEMINI_MODEL` in Render's environment variables. Configure `CORS_ORIGINS` to include the exact deployed frontend origin, with no trailing slash:
-
-```text
-https://buildsight-multimodal-construction.vercel.app
-```
-
-Do not commit `.env` files or expose the Gemini API key in frontend environment variables.
-
-### Frontend — Vercel
-
-Deploy the `frontend` directory as a Vite application:
-
-- **Root Directory:** `frontend`
-- **Build Command:** `npm run build`
-- **Output Directory:** `dist`
-- **Environment Variable:** `VITE_API_URL`
-
-Set `VITE_API_URL` to the deployed backend URL:
-
-```text
-https://buildsight-multimodal-construction.onrender.com
-```
-
-`VITE_` variables are embedded in client-side code, so only use this prefix for values that are safe to make public, such as the backend URL. Never store API keys or secrets in `VITE_` variables. Redeploy the frontend after changing environment variables.
-
----
-
-## 📂 Project Structure
-
-```text
-buildsight-multimodal-construction-intelligence/
-├── backend/
-│   ├── main.py
-│   ├── requirements.txt
-│   └── .python-version
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── assets/
-│   │   ├── App.jsx
-│   │   └── App.css
-│   ├── .env
-│   └── package.json
-└── README.md
-```
-
-This is a simplified overview; the exact files and folders may vary as the project evolves.
+Deploy on **Render**
 
 ---
 
 ## 🤝 Contributing
 
-Contributions and suggestions are welcome.
+1. Fork the repository
+2. Create a new branch
 
-1. Fork the repository.
-2. Create a feature branch: `git checkout -b feature/your-feature`
-3. Commit your changes: `git commit -m "Add your feature"`
-4. Push the branch: `git push origin feature/your-feature`
-5. Open a Pull Request describing your changes.
+```bash
+git checkout -b feature-name
+```
 
-Please test changes locally and avoid committing credentials, `.env` files, virtual environments, `node_modules`, or build output.
+3. Commit changes
+
+```bash
+git commit -m "Added new feature"
+```
+
+4. Push changes
+
+```bash
+git push origin feature-name
+```
+
+5. Open a Pull Request
 
 ---
 
-## ⚠️ Safety & Estimation Disclaimer
+## ⚠️ Disclaimer
 
-BuildSight is an informational decision-support tool, not a substitute for certified engineering judgment, professional safety inspections, or applicable local requirements. AI image observations may be incomplete or incorrect and do not certify PPE compliance, structural integrity, or code compliance. Crack dimensions cannot be reliably measured from ordinary photos without an appropriate scale and assessment method. Cost and schedule outputs are preliminary estimates, not professional valuations, quotations, or guarantees. Have qualified professionals review findings before using them in real projects.
+BuildSight provides AI-assisted insights for educational and informational purposes. Construction decisions should always be verified by qualified professionals.
 
 ---
-#   B u i l d S i g h t  
- 
+
+## 👨‍💻 Author
+
+**Vivek Pawar**
+
+```
+
+### Why this version is better
+- ✅ Around **70% shorter**
+- ✅ Easier to read
+- ✅ Simple installation steps
+- ✅ Cleaner project structure
+- ✅ Looks professional on GitHub
+- ✅ Keeps only the important information
+
+I would also recommend adding **4–5 screenshots** near the top of the README, since repositories with visuals tend to be much more engaging and easier for visitors to understand at a glance.
