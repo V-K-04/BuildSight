@@ -233,19 +233,3 @@ git push origin feature-name
 BuildSight provides AI-assisted insights for educational and informational purposes. Construction decisions should always be verified by qualified professionals.
 
 ---
-
-## 👨‍💻 Author
-
-**Vivek Pawar**
-
-```
-
-### Why this version is better
-- ✅ Around **70% shorter**
-- ✅ Easier to read
-- ✅ Simple installation steps
-- ✅ Cleaner project structure
-- ✅ Looks professional on GitHub
-- ✅ Keeps only the important information
-
-I would also recommend adding **4–5 screenshots** near the top of the README, since repositories with visuals tend to be much more engaging and easier for visitors to understand at a glance.
